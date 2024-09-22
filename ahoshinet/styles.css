@@ -1,0 +1,96 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+#container {
+    position: relative;
+    font-size: 2rem;
+}
+
+#slashes {
+    position: relative;
+    display: inline-block;
+}
+
+#left-slash, #right-slash {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0;
+}
+
+#left-slash {
+    left: -25px;
+    animation: slashDown 2s forwards;
+}
+
+#right-slash {
+    right: -25px;
+    animation: slashUp 2s forwards;
+}
+
+@keyframes slashDown {
+    from {
+        top: -50px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes slashUp {
+    from {
+        bottom: -50px;
+        opacity: 0;
+    }
+    to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+#text-container {
+    display: inline-block;
+    margin: 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid black;
+    font-size: 2rem;
+    opacity: 0;
+}
+
+@keyframes typing {
+    from { width: 0; opacity: 1; }
+    to { width: 100%; opacity: 1; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+
+.fade-out {
+    animation: fadeOut 5s forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.fade-in {
+    animation: fadeIn 5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
