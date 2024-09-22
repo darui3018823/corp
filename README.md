@@ -1,2 +1,2 @@
 # corp
-https://corp.daruks.com/ahoshinet
+https://corp.daruks.com/ahoshinet/
