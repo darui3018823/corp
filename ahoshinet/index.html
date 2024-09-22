@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アホシネット通信株式会社</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        h1 {
+            position: relative;
+            display: inline-block;
+            padding: 0 45px;
+            font-size: 2rem;
+            opacity: 0; /* 初期状態では非表示 */
+            animation: fadeIn 2s forwards 2.5s; /* 2.5秒後にフェードイン */
+        }
+
+        h1:before, h1:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            display: inline-block;
+            width: 44px;
+            height: 0; /* 初期状態の高さは0 */
+            background-color: black;
+            transform: rotate(-60deg);
+            animation: grow 2s forwards; /* スラッシュが生えるアニメーション */
+        }
+
+        h1:before {
+            left: 0;
+        }
+
+        h1:after {
+            right: 0;
+            transform: rotate(60deg); /* 右側のスラッシュは逆方向に回転 */
+        }
+
+        @keyframes grow {
+            to {
+                height: 2px; /* 最終的にスラッシュの高さが表示される */
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* フェードインしてテキストが表示される */
+            }
+        }
+
+        .typing {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            width: 0;
+            animation: typing 3.5s steps(30, end) 4.5s forwards, blink-caret 0.75s step-end infinite 8s;
+            /* 4.5秒後にタイピングアニメーションが開始される */
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: black; }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- スラッシュ付きのタイトル -->
+    <h1>/ アホシネット通信株式会社 /</h1>
+
+    <!-- タイピングアニメーション -->
+    <h1 class="typing">アホシネット通信株式会社</h1>
+</body>
+</html>
