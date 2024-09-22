@@ -5,9 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahoshinet Internet Co., Ltd.</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar.css">
 </head>
 <body>
-
+    <div class="navbar">
+        <img src="logo.png" alt="ロゴ" class="logo">
+        <div class="menu" onclick="toggleMenu()">
+          <div class="menu-text">Menu</div>
+          <div class="menu-icon">
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="side-menu" id="sideMenu">
+        <div class="menu-content">
+          <h1><a href="https://corp.daruks.com/ahoshinet/">Home</a></h1>
+          <ul>
+            <li><a href="https://corp.daruks.com/ahoshinet/about/">About</a></li>
+            <li><a href="https://corp.daruks.com/ahoshinet/news">News</a></li>
+            <li><a href="https://corp.daruks.com/ahoshinet/contact/">Contact</a></li>
+        </ul>
+            <div class="footer">
+                © Ahoshinet Internet Co., Ltd. All rights reserved.<br>
+                © darui3018823 All rights reserved.
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleMenu() {
+            const sideMenu = document.getElementById('sideMenu');
+            sideMenu.classList.toggle('active');
+        }
+    </script>
+    
     <div id="container">
         <div id="slashes">
             <span id="left-slash">/</span>

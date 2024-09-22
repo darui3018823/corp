@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    padding: 0 20px;
+    background-color: #3498db;
+  }
+  
+  .logo {
+    height: 50px; /* ロゴの高さ調整 */
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .menu-text {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+  }
+  
+  .menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+  }
+  
+  /* サイドメニューのスタイル */
+  .side-menu {
+    position: fixed;
+    top: 0;
+    right: -300px; /* 初期位置は画面外 */
+    width: 250px;
+    height: 100%;
+    background-color: #d3d3d3; /* 明るめの灰色 */
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .side-menu.active {
+    right: 0; /* メニューが表示される位置 */
+  }
+  
+  .menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+  }
+  
+  .menu-content h1 {
+    font-size: 24px; /* 大きめの文字 */
+    margin: 20px 0;
+  }
+  
+  .menu-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-content li {
+    margin: 10px 0;
+  }
+  
+  .footer {
+    margin-top: auto; /* フッターを下部に配置 */
+    font-size: 12px; /* 権利表示は目立たないサイズ */
+    color: #555; /* 薄い色 */
+  }
+  
