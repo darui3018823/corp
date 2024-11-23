@@ -1,90 +1,135 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  padding: 0 20px;
+  background-color: #3498db; /* ナビバーの背景色 */
+}
+
+.company-name {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem; /* フォントサイズ */
+  color: white; /* テキストの色 */
+}
+
+#left-slash, #right-slash {
+  opacity: 0; /* 初期状態で透明 */
+}
+
+#left-slash {
+  animation: slashDown 0.5s forwards; /* 左スラッシュのアニメーション */
+}
+
+#right-slash {
+  animation: slashUp 0.5s forwards; /* 右スラッシュのアニメーション */
+}
+
+/* スラッシュの動きを表現 */
+@keyframes slashDown {
+  from {
+      top: -50px;
+      opacity: 0;
   }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 90px;
-    padding: 0 20px;
-    background-color: #3498db;
+  to {
+      top: 0;
+      opacity: 1;
   }
-  
-  .logo {
-    height: 50px; /* ロゴの高さ調整 */
+}
+
+@keyframes slashUp {
+  from {
+      bottom: -50px;
+      opacity: 0;
   }
-  
-  .menu {
-    display: flex;
-    align-items: center;
-    color: white;
-    cursor: pointer;
+  to {
+      bottom: 0;
+      opacity: 1;
   }
-  
-  .menu-text {
-    font-size: 18px;
-    margin-right: 10px;
-  }
-  
-  .menu-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 20px;
-  }
-  
-  .menu-icon div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-  }
-  
-  /* サイドメニューのスタイル */
-  .side-menu {
-    position: fixed;
-    top: 0;
-    right: -300px; /* 初期位置は画面外 */
-    width: 250px;
-    height: 100%;
-    background-color: #d3d3d3; /* 明るめの灰色 */
-    transition: right 0.3s ease;
-    z-index: 1000;
-  }
-  
-  .side-menu.active {
-    right: 0; /* メニューが表示される位置 */
-  }
-  
-  .menu-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    text-align: center;
-  }
-  
-  .menu-content h1 {
-    font-size: 24px; /* 大きめの文字 */
-    margin: 20px 0;
-  }
-  
-  .menu-content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .menu-content li {
-    margin: 10px 0;
-  }
-  
-  .footer {
-    margin-top: auto; /* フッターを下部に配置 */
-    font-size: 12px; /* 権利表示は目立たないサイズ */
-    color: #555; /* 薄い色 */
-  }
-  
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease; /* ボタンが動くアニメーション */
+}
+
+.menu-text {
+  font-size: 1.5rem;
+  color: white;
+  margin-right: 10px;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 15px;
+}
+
+.menu-icon div {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+
+/* メニューが開かれたとき、ボタンが左に移動する */
+.close-active {
+  transform: translateX(-250px); /* 左にスライド */
+}
+
+/* サイドメニュー */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -300px; /* 初期位置は画面外 */
+  width: 250px;
+  height: 100%;
+  background-color: #d3d3d3; /* 明るめの灰色 */
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.side-menu.active {
+  right: 0; /* メニューが表示される位置 */
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.menu-content h1 {
+  font-size: 24px; /* 大きめの文字 */
+  margin: 20px 0;
+}
+
+.menu-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-content li {
+  margin: 10px 0;
+}
+
+.footer {
+  margin-top: auto; /* フッターを下部に配置 */
+  font-size: 10px; /* 権利表示は目立たないサイズ */
+  color: #555; /* 薄い色 */
+}

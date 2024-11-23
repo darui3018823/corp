@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahoshinet Internet Co., Ltd.</title>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="navbar.css">
-    
-    <!--埋め込み-->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <meta property="og:site_name" content="Ahoshinet Internet Co., Ltd." />
     <meta property="og:title" content="Ahoshinet Internet: Go Internet Next Stage.">
     <meta property="og:description" content="アホシネット通信株式会社は、最先端のインターネットサービスを提供する企業です。お客様に高速で安定した通信環境を提供し、未来の通信インフラを支えることを目指しています。">
@@ -18,14 +23,53 @@
     <meta property="og:type" content="website">
 </head>
 <body>
-    <div id="container">
-        <div id="slashes">
+    <div class="navbar">
+        <div class="company-name">
             <span id="left-slash">/</span>
             <span id="text-container">Ahoshinet Internet Co., Ltd.</span>
             <span id="right-slash">/</span>
         </div>
+        <div class="menu" id="menuButton" onclick="toggleMenu()">
+            <div class="menu-text">Menu</div>
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
     </div>
-
+    
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-content">
+            <br>
+            <h1><a href="https://corp.daruks.com/ahoshinet/">Home</a></h1>
+            <ul>
+                <li><a href="https://corp.daruks.com/ahoshinet/about/">About</a></li>
+                <li><a href="https://corp.daruks.com/ahoshinet/news">News</a></li>
+                <li><a href="https://corp.daruks.com/ahoshinet/contact/">Contact</a></li>
+            </ul>
+            <div class="footer">
+                © 2024 darui3018823,  Ahoshinet Internet Co., Ltd.<br>
+                All rights reserved.
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleMenu() {
+            const sideMenu = document.getElementById('sideMenu');
+            const menuButton = document.getElementById('menuButton');
+            sideMenu.classList.toggle('active');
+            
+            if (sideMenu.classList.contains('active')) {
+                menuButton.querySelector('.menu-text').textContent = 'Close';
+                menuButton.classList.add('close-active'); // Closeボタンに変化
+            } else {
+                menuButton.querySelector('.menu-text').textContent = 'Menu';
+                menuButton.classList.remove('close-active'); // 元に戻す
+            }
+        }
+    </script>
     <script src="scripts.js"></script>
+
 </body>
 </html>
